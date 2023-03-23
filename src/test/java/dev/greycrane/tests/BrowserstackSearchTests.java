@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.itemWithText;
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 import static io.appium.java_client.AppiumBy.accessibilityId;
 import static io.appium.java_client.AppiumBy.id;
@@ -42,15 +43,16 @@ public class BrowserstackSearchTests extends TestBase {
     }
 
     @Tag("ios")
-    @DisplayName("Переход на вкладку Show HN")
+    @DisplayName("Проверка отображения введённого текста")
     @Test
     void goToShowHNTab() {
-        step("Перейти на вкладку Show HN", () -> {
-            $(Selectors.byText("Show HN")).click();
+        step("Ввод текста", () -> {
+            $(id("Text Button")).click();
+            $(id("Text Input")).sendKeys("some random text");
+            $(id("Text Input")).pressEnter();
         });
-        step("Проверка списка новостей", () ->
-                $$x("/XCUIElementTypeApplication/XCUIElementTypeWindow[1]" +
-                        "/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/" +
-                        "XCUIElementTypeOther/XCUIElementTypeTable").shouldHave(itemWithText("Show HN:")));
+        step("Проверка текста", () -> {
+            $(id("Text Output")).shouldHave(text("some random text"));
+        });
     }
 }
