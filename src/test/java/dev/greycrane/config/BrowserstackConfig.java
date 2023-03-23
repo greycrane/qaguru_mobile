@@ -1,6 +1,8 @@
 package dev.greycrane.config;
 
-@BrowserstackConfig.Sources({"classpath:${env}.properties"})
+import org.aeonbits.owner.Config;
+
+@Config.Sources({"classpath:${env}.properties"})
 
 public interface BrowserstackConfig extends org.aeonbits.owner.Config {
 
