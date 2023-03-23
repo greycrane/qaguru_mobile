@@ -46,7 +46,6 @@ public class BrowserstackSearchTests extends TestBase {
     @Test
     void goToShowHNTab() {
         step("Перейти на вкладку Show HN", () -> {
-            $(accessibilityId("Search Wikipedia")).click();
             $(Selectors.byText("Show HN")).click();
         });
         step("Проверка списка новостей", () ->
