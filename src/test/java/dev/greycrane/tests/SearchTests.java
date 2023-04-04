@@ -1,6 +1,5 @@
 package dev.greycrane.tests;
 
-import com.codeborne.selenide.Selectors;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -14,7 +13,7 @@ import static io.appium.java_client.AppiumBy.id;
 import static io.qameta.allure.Allure.step;
 
 @Tag("mobile")
-public class BrowserstackSearchTests extends TestBase {
+public class SearchTests extends TestBase {
 
     @Tag("android")
     @DisplayName("Поиск статьи про Java в Википедии")

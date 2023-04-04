@@ -1,6 +1,6 @@
 package dev.greycrane.helpers;
 
-import dev.greycrane.config.BrowserstackConfig;
+import dev.greycrane.config.MobileDriverConfig;
 import io.qameta.allure.restassured.AllureRestAssured;
 import org.aeonbits.owner.ConfigFactory;
 
@@ -9,7 +9,7 @@ import static java.lang.String.format;
 
 public class Browserstack {
     public static String getVideoUrl(String sessionId) {
-        BrowserstackConfig config = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
+        MobileDriverConfig config = ConfigFactory.create(MobileDriverConfig.class, System.getProperties());
         String url = format("https://api.browserstack.com/app-automate/sessions/%s.json", sessionId);
 
         return given()

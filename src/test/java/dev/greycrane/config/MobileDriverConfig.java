@@ -4,7 +4,7 @@ import org.aeonbits.owner.Config;
 
 @Config.Sources({"classpath:${env}.properties"})
 
-public interface BrowserstackConfig extends org.aeonbits.owner.Config {
+public interface MobileDriverConfig extends org.aeonbits.owner.Config {
 
     @Key("login")
     String getLogin();
@@ -32,5 +32,26 @@ public interface BrowserstackConfig extends org.aeonbits.owner.Config {
 
     @Key("name")
     String getTestName();
+
+    @Key("platformVersion")
+    String getPlatformVersion();
+
+    @Key("platformName")
+    String getPlatformName();
+
+    @Key("deviceName")
+    String getDeviceName();
+
+    @Key("appPath")
+    String getAppPath();
+
+    @Key("appPackage")
+    String getAppPackage();
+
+    @Key("appActivity")
+    String getAppActivity();
+
+    @Key("localUrl")
+    String getLocalUrl();
 }
 
