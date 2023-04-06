@@ -19,30 +19,34 @@ public class SearchTests extends TestBase {
     @DisplayName("Поиск статьи про Java в Википедии")
     @Test
     void searchTestSample() {
-        step("Пропуск онбординга", () ->
-                $(id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click());
+        step("Пропуск онбординга", () -> {
+            $(id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
+        });
         step("Поиск статьи в Википедии", () -> {
             $(accessibilityId("Search Wikipedia")).click();
             $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("java");
         });
-        step("Проверка найденных результатов", () ->
-                $$(id("org.wikipedia.alpha:id/page_list_item_title"))
-                        .shouldHave(sizeGreaterThan(0)));
+        step("Проверка найденных результатов", () -> {
+            $$(id("org.wikipedia.alpha:id/page_list_item_title"))
+                    .shouldHave(sizeGreaterThan(0));
+        });
     }
 
     @Tag("android")
     @DisplayName("Поиск статьи про Испанию в Википедии")
     @Test
     void searchTestMyOwn() {
-        step("Пропуск онбординга", () ->
-                $(id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click());
+        step("Пропуск онбординга", () -> {
+            $(id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
+        });
         step("Поиск статьи в Википедии", () -> {
             $(accessibilityId("Search Wikipedia")).click();
             $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Spain");
         });
-        step("Проверка найденных результатов", () ->
-                $$(id("org.wikipedia.alpha:id/page_list_item_title"))
-                        .shouldHave(itemWithText("Spain")));
+        step("Проверка найденных результатов", () -> {
+            $$(id("org.wikipedia.alpha:id/page_list_item_title"))
+                    .shouldHave(itemWithText("Spain"));
+        });
     }
 
     @Tag("android")
