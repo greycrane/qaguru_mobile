@@ -14,7 +14,7 @@ public class Browserstack {
 
         return given()
                 .filter(new AllureRestAssured())
-                .auth().basic(config.getLogin(), config.getPassword())
+                .auth().basic(config.getUser(), config.getKey())
                 .when()
                 .get(url)
                 .then()

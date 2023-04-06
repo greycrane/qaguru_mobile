@@ -24,7 +24,7 @@ public class LocalMobileDriver implements WebDriverProvider {
 
     public static URL getAppiumServerUrl() {
         try {
-            return new URL(config.getLocalUrl());
+            return new URL(config.getLaunchUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

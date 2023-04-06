@@ -9,23 +9,20 @@ public interface MobileDriverConfig extends org.aeonbits.owner.Config {
     @Key("deviceName")
     String getDeviceName();
 
-    @Key("platformVersion")
-    String getPlatformVersion();
-
     @Key("platformName")
     String getPlatformName();
 
-    @Key("projectName")
-    String getProjectName();
+    @Key("platformVersion")
+    String getPlatformVersion();
 
-    @Key("buildName")
-    String getBuildName();
+    @Key("project")
+    String getProject();
 
-    @Key("testName")
-    String getTestName();
+    @Key("build")
+    String getBuild();
 
-    @Key("osVersion")
-    String getOsVersion();
+    @Key("name")
+    String getName();
 
     @Key("browserstack.user")
     String getUser();
@@ -33,17 +30,14 @@ public interface MobileDriverConfig extends org.aeonbits.owner.Config {
     @Key("browserstack.key")
     String getKey();
 
-    @Key("localUrl")
-    String getLocalUrl();
-
     @Key("app")
     String getApp();
 
-    @Key("appPath")
-    String getAppPath();
-
     @Key("launchUrl")
     String getLaunchUrl();
+
+    @Key("appPath")
+    String getAppPath();
 
     @Key("appPackage")
     String getAppPackage();
@@ -51,4 +45,3 @@ public interface MobileDriverConfig extends org.aeonbits.owner.Config {
     @Key("appActivity")
     String getAppActivity();
 }
-
