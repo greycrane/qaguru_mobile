@@ -49,21 +49,21 @@ public class SearchTests extends TestBase {
     void threeContinueOnboardingScreen() {
         step("Проверка текста на первом экране онбординга", () -> {
             $(id("org.wikipedia.alpha:id/primaryTextView"))
-                    .shouldHave(text("Send anonymous data"));
+                    .shouldHave(text("The Free Encyclopedia …in over 300 languages"));
         });
         step("Переход на второй экран онбординга", () -> {
             $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
         });
         step("Проверка текста на втором экране онбординга", () -> {
             $(id("org.wikipedia.alpha:id/primaryTextView"))
-                    .shouldHave(text("Send anonymous data"));
+                    .shouldHave(text("New ways to explore"));
         });
         step("Переход на третий экран онбординга", () -> {
             $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
         });
         step("Проверка текста на третьем экране онбординга", () -> {
             $(id("org.wikipedia.alpha:id/primaryTextView"))
-                    .shouldHave(text("Send anonymous data"));
+                    .shouldHave(text("Reading lists with sync"));
         });
         step("Переход на четвёртый экран онбординга", () -> {
             $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
