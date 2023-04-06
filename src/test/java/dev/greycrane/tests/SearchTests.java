@@ -45,6 +45,37 @@ public class SearchTests extends TestBase {
                         .shouldHave(itemWithText("Spain")));
     }
 
+    @Tag("android")
+    @DisplayName("Проверка онбординг экранов")
+    @Test
+    void threeContinueOnboardingScreen() {
+        step("Проверка текста на первом экране онбординга", () -> {
+            $(id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("Send anonymous data"));
+        });
+        step("Переход на второй экран онбординга", () -> {
+            $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        });
+        step("Проверка текста на втором экране онбординга", () -> {
+            $(id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("Send anonymous data"));
+        });
+        step("Переход на третий экран онбординга", () -> {
+            $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        });
+        step("Проверка текста на третьем экране онбординга", () -> {
+            $(id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("Send anonymous data"));
+        });
+        step("Переход на четвёртый экран онбординга", () -> {
+            $(id("org.wikipedia.alpha:id/fragment_onboarding_forward_button")).click();
+        });
+        step("Проверка текста на четвёртом экране онбординга", () -> {
+            $(id("org.wikipedia.alpha:id/primaryTextView"))
+                    .shouldHave(text("Send anonymous data"));
+        });
+    }
+
     @Tag("ios")
     @DisplayName("Проверка отображения введённого текста")
     @Test

@@ -1,6 +1,7 @@
 package dev.greycrane.tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import dev.greycrane.drivers.BrowserstackMobileDriver;
 import dev.greycrane.drivers.LocalMobileDriver;
@@ -45,8 +46,18 @@ public class TestBase {
 
     @AfterEach
     void afterEach() {
+
+        String sessionId = Selenide.sessionId().toString();
+
         Attach.pageSource();
 
         closeWebDriver();
+
+        switch (env) {
+            case "android":
+            case "iphone":
+                Attach.addVideo(sessionId);
+                break;
+        }
     }
 }
