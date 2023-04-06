@@ -15,13 +15,10 @@ import static io.qameta.allure.Allure.step;
 @Tag("mobile")
 public class SearchTests extends TestBase {
 
-    @Tag("android")
+    @Tag("android_browserstack")
     @DisplayName("Поиск статьи про Java в Википедии")
     @Test
     void searchTestSample() {
-        step("Пропуск онбординга", () -> {
-            $(id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
-        });
         step("Поиск статьи в Википедии", () -> {
             $(accessibilityId("Search Wikipedia")).click();
             $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("java");
@@ -32,13 +29,10 @@ public class SearchTests extends TestBase {
         });
     }
 
-    @Tag("android")
+    @Tag("android_browserstack")
     @DisplayName("Поиск статьи про Испанию в Википедии")
     @Test
     void searchTestMyOwn() {
-        step("Пропуск онбординга", () -> {
-            $(id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click();
-        });
         step("Поиск статьи в Википедии", () -> {
             $(accessibilityId("Search Wikipedia")).click();
             $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Spain");
@@ -49,7 +43,7 @@ public class SearchTests extends TestBase {
         });
     }
 
-    @Tag("android")
+    @Tag("android_emulator")
     @DisplayName("Проверка онбординг экранов")
     @Test
     void threeContinueOnboardingScreen() {
@@ -80,7 +74,7 @@ public class SearchTests extends TestBase {
         });
     }
 
-    @Tag("ios")
+    @Tag("ios_browserstack")
     @DisplayName("Проверка отображения введённого текста")
     @Test
     void goToShowHNTab() {
