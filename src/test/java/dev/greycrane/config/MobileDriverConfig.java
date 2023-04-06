@@ -6,7 +6,7 @@ import org.aeonbits.owner.Config;
 
 public interface MobileDriverConfig extends org.aeonbits.owner.Config {
 
-    @Key("deviceName")
+    @Key("device")
     String getDeviceName();
 
     @Key("platformName")
