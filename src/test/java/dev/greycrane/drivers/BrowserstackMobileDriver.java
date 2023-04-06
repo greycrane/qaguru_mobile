@@ -20,14 +20,13 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
         mutableCapabilities.merge(capabilities);
 
-        mutableCapabilities.setCapability("browserstack.user", config.getLogin());
-        mutableCapabilities.setCapability("browserstack.key", config.getPassword());
-        mutableCapabilities.setCapability("app", config.getAppUrl());
-        mutableCapabilities.setCapability("device", config.getDevice());
-        mutableCapabilities.setCapability("os_version", config.getOsVersion());
+        mutableCapabilities.setCapability("user", config.getUser());
+        mutableCapabilities.setCapability("key", config.getKey());
+        mutableCapabilities.setCapability("app", config.getApp());
+        mutableCapabilities.setCapability("deviceName", config.getDeviceName());
+        mutableCapabilities.setCapability("osVersion", config.getOsVersion());
         mutableCapabilities.setCapability("project", config.getProjectName());
         mutableCapabilities.setCapability("build", config.getBuildName());
-        mutableCapabilities.setCapability("appUrl", config.getAppUrl());
         mutableCapabilities.setCapability("appActivity", config.getAppActivity());
         mutableCapabilities.setCapability("name", config.getTestName());
 
@@ -36,7 +35,7 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
 
     public static URL getBrowserstackUrl() {
         try {
-            return new URL(config.getRemoteUrl());
+            return new URL(config.getLaunchUrl());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }

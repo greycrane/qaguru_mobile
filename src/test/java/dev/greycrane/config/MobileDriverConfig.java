@@ -6,32 +6,8 @@ import org.aeonbits.owner.Config;
 
 public interface MobileDriverConfig extends org.aeonbits.owner.Config {
 
-    @Key("login")
-    String getLogin();
-
-    @Key("password")
-    String getPassword();
-
-    @Key("remoteUrl")
-    String getRemoteUrl();
-
-    @Key("appUrl")
-    String getAppUrl();
-
-    @Key("device")
-    String getDevice();
-
-    @Key("os_version")
-    String getOsVersion();
-
-    @Key("project")
-    String getProjectName();
-
-    @Key("build")
-    String getBuildName();
-
-    @Key("name")
-    String getTestName();
+    @Key("deviceName")
+    String getDeviceName();
 
     @Key("platformVersion")
     String getPlatformVersion();
@@ -39,19 +15,40 @@ public interface MobileDriverConfig extends org.aeonbits.owner.Config {
     @Key("platformName")
     String getPlatformName();
 
-    @Key("deviceName")
-    String getDeviceName();
+    @Key("projectName")
+    String getProjectName();
+
+    @Key("buildName")
+    String getBuildName();
+
+    @Key("testName")
+    String getTestName();
+
+    @Key("osVersion")
+    String getOsVersion();
+
+    @Key("browserstack.user")
+    String getUser();
+
+    @Key("browserstack.key")
+    String getKey();
+
+    @Key("localUrl")
+    String getLocalUrl();
+
+    @Key("app")
+    String getApp();
 
     @Key("appPath")
     String getAppPath();
+
+    @Key("launchUrl")
+    String getLaunchUrl();
 
     @Key("appPackage")
     String getAppPackage();
 
     @Key("appActivity")
     String getAppActivity();
-
-    @Key("localUrl")
-    String getLocalUrl();
 }
 
