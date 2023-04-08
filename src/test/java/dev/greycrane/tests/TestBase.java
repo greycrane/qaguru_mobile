@@ -54,8 +54,8 @@ public class TestBase {
         closeWebDriver();
 
         switch (env) {
-            case "android":
-            case "iphone":
+            case "androidBrowserstack":
+            case "iosBrowserstack":
                 Attach.addVideo(sessionId);
                 break;
         }
